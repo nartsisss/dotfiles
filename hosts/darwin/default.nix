@@ -1,7 +1,7 @@
 {
   imports = [
     ./configuration.nix
-    ./apple.nix
+    ./system.nix
     ./brew.nix
   ];
 }
