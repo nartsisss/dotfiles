@@ -4,6 +4,7 @@
     ./direnv.nix
     ./eza.nix
     ./git.nix
+    ./gpg.nix
     ./helix.nix
     ./yazi.nix
     ./zellij.nix
