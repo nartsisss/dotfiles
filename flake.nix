@@ -14,8 +14,8 @@
   };
 
   outputs = inputs@{ self, nix-darwin, home-manager, ... }: {
-    darwinConfigurations.macos = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+    darwinConfigurations.helios = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
       
       modules = [
         home-manager.darwinModules.home-manager
