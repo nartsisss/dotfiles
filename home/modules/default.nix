@@ -10,4 +10,10 @@
     ./zoxide.nix
     ./zsh.nix
   ];
+
+  programs = {
+    starship.enable = true;
+    bat.enable = true;
+    ripgrep.enable = true;
+  };
 }

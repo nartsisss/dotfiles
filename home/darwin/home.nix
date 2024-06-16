@@ -18,11 +18,5 @@
         hm = "sudo $EDITOR ~/.nix/home/darwin/home.nix";
       };
     };
-
-    starship.enable = true;
-    
-    bat.enable = true;
-
-    ripgrep.enable = true;
   };
 }
