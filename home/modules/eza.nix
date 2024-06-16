@@ -7,7 +7,7 @@
     icons = true;
 
     extraOptions = [
-      "--color always"
+      "--color=always"
       "--long"
       "--no-filesize"
       "--no-time"
