@@ -1,9 +1,7 @@
 { nixpkgs, pkgs, home-manager, ... }:
 
 {
-  nixpkgs = {
-    hostPlatform = "aarch64-darwin";
-  };
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix = {
     package = pkgs.nix;
@@ -28,9 +26,7 @@
     home = "/Users/nartsiss";
   };
 
-  services = {
-    nix-daemon.enable = true;
-  };
+  services.nix-daemon.enable = true;
 
   programs.zsh.enable = true;
 }
