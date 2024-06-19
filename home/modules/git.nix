@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   programs = {
     git = {
@@ -14,6 +16,13 @@
 
       extraConfig = {
         init.defaultBranch = "main";
+        
+        gpg.format = "ssh";
+      };
+
+      signing = {
+        signByDefault = true;
+        key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
       };
     };
 
