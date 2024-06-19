@@ -16,7 +16,7 @@
         rebuild = "darwin-rebuild switch --flake ~/.nix#helios";
         #todo: use path as variable
         flake = "sudo $EDITOR ~/.nix/flake.nix";
-        conf = "sudo $EDITOR ~/.nix/hosts/darwin/configuration.nix";
+        conf = "sudo $EDITOR ~/.nix/hosts/helios/configuration.nix";
         hm = "sudo $EDITOR ~/.nix/home/darwin/home.nix";
       };
     };

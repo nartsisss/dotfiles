@@ -19,7 +19,7 @@
       
       modules = [
         home-manager.darwinModules.home-manager
-        ./hosts/darwin
+        ./hosts/helios
         ./home/darwin
       ];
     };
