@@ -5,6 +5,7 @@
     ./eza.nix
     ./git.nix
     ./helix.nix
+    ./rust.nix
     ./ssh.nix
     ./yazi.nix
     ./zellij.nix

@@ -1,7 +1,9 @@
 {
   imports = [
+    ./brew.nix
     ./configuration.nix
     ./system.nix
-    ./brew.nix
+
+    ../shared
   ];
 }
