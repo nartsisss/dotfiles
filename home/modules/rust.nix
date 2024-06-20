@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    rust-bin.stable.latest.default
+  home.packages = [
+    pkgs.rust-bin.stable.latest.default
   ];
 }
