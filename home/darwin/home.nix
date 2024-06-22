@@ -1,16 +1,14 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
-    ../modules 
+    ../modules
   ];
-  
+
   home = {
     stateVersion = "24.05";
   };
-  
+
   programs = {
-    zsh = {  
+    zsh = {
       shellAliases = {
         #todo: use hostname as flake configuration name
         rebuild = "darwin-rebuild switch --flake ~/.nix#helios";

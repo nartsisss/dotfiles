@@ -1,10 +1,8 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   programs = {
     git = {
       enable = true;
-      
+
       delta.enable = true;
 
       userName = "nartsisss";
@@ -16,7 +14,7 @@
 
       extraConfig = {
         init.defaultBranch = "main";
-        
+
         gpg.format = "ssh";
       };
 

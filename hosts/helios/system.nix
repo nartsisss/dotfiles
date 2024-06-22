@@ -19,6 +19,6 @@
 
     stateVersion = 4;
   };
-  
+
   security.pam.enableSudoTouchIdAuth = true;
 }
