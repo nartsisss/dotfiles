@@ -21,12 +21,19 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, home-manager, alejandra, rust-overlay, ... }: {
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    home-manager,
+    alejandra,
+    rust-overlay,
+    ...
+  }: {
     darwinConfigurations.helios = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
-      specialArgs = { inherit alejandra rust-overlay; };
-      
+      specialArgs = {inherit alejandra rust-overlay;};
+
       modules = [
         home-manager.darwinModules.home-manager
         ./hosts/helios

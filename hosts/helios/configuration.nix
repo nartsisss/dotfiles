@@ -1,6 +1,9 @@
-{ nixpkgs, pkgs, home-manager, ... }:
-
 {
+  nixpkgs,
+  pkgs,
+  home-manager,
+  ...
+}: {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix = {
@@ -8,12 +11,12 @@
       user = "root";
       automatic = true;
     };
-    
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
 
-    settings.allowed-users = [ "@admin" "nartsiss" ];
+    settings.allowed-users = ["@admin" "nartsiss"];
   };
 
   users.users.nartsiss = {
