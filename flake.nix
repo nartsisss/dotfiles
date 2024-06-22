@@ -21,7 +21,7 @@
     darwinConfigurations.helios = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit rust-overlay; };
       
       modules = [
         home-manager.darwinModules.home-manager

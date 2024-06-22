@@ -1,7 +1,7 @@
-{ nixpkgs, inputs, ... }:
+{ nixpkgs, rust-overlay, ... }:
 
 {
   nixpkgs.overlays = [
-    inputs.rust-overlay.overlays.default
+    rust-overlay.overlays.default
   ];
 }
