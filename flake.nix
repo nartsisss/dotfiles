@@ -11,17 +11,21 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, home-manager, rust-overlay, ... }: {
+  outputs = inputs@{ self, nix-darwin, home-manager, alejandra, rust-overlay, ... }: {
     darwinConfigurations.helios = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
-      specialArgs = { inherit rust-overlay; };
+      specialArgs = { inherit alejandra rust-overlay; };
       
       modules = [
         home-manager.darwinModules.home-manager

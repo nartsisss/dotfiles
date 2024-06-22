@@ -1,4 +1,10 @@
+{ alejandra, ... }:
+
 {
+  environment.systemPackages = [
+    alejandra.defaultPackage.aarch64-darwin
+  ];
+  
   homebrew = {
     enable = true;
 
