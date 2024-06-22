@@ -9,10 +9,6 @@
     extraOptions = [
       "--color=always"
       "--long"
-      "--no-filesize"
-      "--no-time"
-      "--no-user"
-      "--no-permissions"
     ];
   };
 }
