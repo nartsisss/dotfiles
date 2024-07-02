@@ -1,10 +1,6 @@
 {
   system = {
     defaults = {
-      LaunchServices = {
-        LSQuarantine = false;
-      };
-
       dock = {
         autohide = true;
         show-recents = false;
@@ -16,9 +12,5 @@
         AppleShowAllFiles = true;
       };
     };
-
-    stateVersion = 4;
   };
-
-  security.pam.enableSudoTouchIdAuth = true;
 }

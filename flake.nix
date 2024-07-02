@@ -1,5 +1,5 @@
 {
-  description = "nartsiss's nix flakes";
+  description = "Daniil Nartsissov's (nartsiss's) Nix configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -21,24 +21,17 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nix-darwin,
-    home-manager,
-    alejandra,
-    rust-overlay,
-    ...
-  }: {
-    darwinConfigurations.helios = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+  outputs = inputs:
+    let
+      configurations = import ./hosts inputs;
+    in
+    {
+      #nixosModules.default = ./modules/nixos;
+      darwinModules.default = ./modules/darwin;
+      homeManagerModules.default = ./modules/home;
 
-      specialArgs = {inherit alejandra rust-overlay;};
-
-      modules = [
-        home-manager.darwinModules.home-manager
-        ./hosts/helios
-        ./home/darwin
-      ];
+      #nixosConfigurations = configurations.nixosConfigurations;
+      darwinConfigurations = configurations.darwinConfigurations;
+      #homeManagerConfigurations = configurations.homeManagerConfigurations;
     };
-  };
 }

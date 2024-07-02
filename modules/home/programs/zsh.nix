@@ -19,4 +19,6 @@
       EDITOR = "hx";
     };
   };
+  
+  home.file.".hushlogin".text = "";
 }
