@@ -21,17 +21,15 @@
     };
   };
 
-  outputs = inputs:
-    let
-      configurations = import ./hosts inputs;
-    in
-    {
-      #nixosModules.default = ./modules/nixos;
-      darwinModules.default = ./modules/darwin;
-      homeManagerModules.default = ./modules/home;
+  outputs = inputs: let
+    configurations = import ./hosts inputs;
+  in {
+    #nixosModules.default = ./modules/nixos;
+    darwinModules.default = ./modules/darwin;
+    homeManagerModules.default = ./modules/home;
 
-      #nixosConfigurations = configurations.nixosConfigurations;
-      darwinConfigurations = configurations.darwinConfigurations;
-      #homeManagerConfigurations = configurations.homeManagerConfigurations;
-    };
+    #nixosConfigurations = configurations.nixosConfigurations;
+    darwinConfigurations = configurations.darwinConfigurations;
+    #homeManagerConfigurations = configurations.homeManagerConfigurations;
+  };
 }

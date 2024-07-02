@@ -1,6 +1,8 @@
-{ alejandra, system, ... }:
-
 {
+  alejandra,
+  system,
+  ...
+}: {
   environment.systemPackages = [
     alejandra.defaultPackage.${system}
   ];
