@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ../shared
     ./brew.nix
@@ -15,4 +15,8 @@
   };
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override {fonts = ["JetbrainsMono" "NerdFontsSymbolsOnly"];})
+  ];
 }
