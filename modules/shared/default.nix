@@ -1,4 +1,8 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./users
   ];
@@ -18,5 +22,13 @@
 
   programs.zsh.enable = true;
 
-  fonts.fontDir.enable = true;
+  fonts =
+    (lib.mkIf pkgs.stdenv.isLinux {
+      fontDir.enable = true;
+    })
+    // {
+      packages = with pkgs; [
+        (nerdfonts.override {fonts = ["JetbrainsMono" "NerdFontsSymbolsOnly"];})
+      ];
+    };
 }
