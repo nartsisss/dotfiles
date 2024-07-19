@@ -1,9 +1,4 @@
-{pkgs, ...}: {
-  imports = [
-    ./nartsiss.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
-    alejandra
-  ];
+{ pkgs, ... }:
+{
+  imports = [ ./nartsiss.nix ];
 }

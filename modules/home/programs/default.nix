@@ -3,10 +3,12 @@
     ./alacritty.nix
     ./direnv.nix
     ./eza.nix
+    ./fd.nix
+    ./fzf.nix
     ./git.nix
     ./helix.nix
-    ./rust.nix
     ./ssh.nix
+    ./tealdeer.nix
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
@@ -17,5 +19,7 @@
     starship.enable = true;
     bat.enable = true;
     ripgrep.enable = true;
+    gitui.enable = true;
+    vscode.enable = true;
   };
 }

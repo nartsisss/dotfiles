@@ -1,10 +1,14 @@
 {
-  description = "Daniil Nartsissov's (nartsiss's) Nix configurations";
+  description = "nartsiss's Nix flake configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -17,15 +21,18 @@
     };
   };
 
-  outputs = inputs: let
-    configurations = import ./hosts inputs;
-  in {
-    #nixosModules.default = ./modules/nixos;
-    darwinModules.default = ./modules/darwin;
-    homeManagerModules.default = ./modules/home;
+  outputs =
+    inputs:
+    let
+      configurations = import ./hosts inputs;
+    in
+    {
+      #nixosModules.default = ./modules/nixos;
+      darwinModules.default = ./modules/darwin;
+      homeManagerModules.default = ./modules/home;
 
-    #nixosConfigurations = configurations.nixosConfigurations;
-    darwinConfigurations = configurations.darwinConfigurations;
-    #homeManagerConfigurations = configurations.homeManagerConfigurations;
-  };
+      #nixosConfigurations = configurations.nixosConfigurations;
+      darwinConfigurations = configurations.darwinConfigurations;
+      #homeManagerConfigurations = configurations.homeManagerConfigurations;
+    };
 }

@@ -1,7 +1,5 @@
-{config, ...}: {
-  imports = [
-    ./nartsiss.nix
-  ];
+{
+  imports = [ ./nartsiss.nix ];
 
   home = {
     stateVersion = "24.11";
