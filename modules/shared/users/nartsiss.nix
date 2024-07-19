@@ -1,15 +1,10 @@
-{
-  pkgs,
-  home-manager,
-  ...
-}: let
+{ pkgs, home-manager, ... }:
+let
   username = "nartsiss";
-  home =
-    if pkgs.stdenv.isDarwin
-    then "/Users"
-    else "/home";
+  home = if pkgs.stdenv.isDarwin then "/Users" else "/home";
   homePath = "${home}/${username}";
-in {
+in
+{
   users.users.${username} = {
     name = username;
     description = "Daniil Nartsissov";

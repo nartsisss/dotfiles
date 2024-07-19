@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   programs = {
     git = {
       enable = true;
@@ -8,9 +9,7 @@
       userName = "nartsisss";
       userEmail = "nartsiss@proton.me";
 
-      ignores = [
-        ".DS_Store"
-      ];
+      ignores = [ ".DS_Store" ];
 
       extraConfig = {
         init.defaultBranch = "main";

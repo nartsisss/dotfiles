@@ -12,6 +12,7 @@
         "git"
         "sudo"
         "macos"
+        "brew"
       ];
     };
 

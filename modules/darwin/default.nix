@@ -1,10 +1,8 @@
-{pkgs, ...}: {
+{
   imports = [
     ../shared
     ./brew.nix
   ];
-
-  nix.gc.user = "root";
 
   services.nix-daemon.enable = true;
 

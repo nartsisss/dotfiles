@@ -1,11 +1,6 @@
+{ lib, pkgs, ... }:
 {
-  lib,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./users
-  ];
+  imports = [ ./users ];
 
   nix = {
     gc.automatic = true;
@@ -22,13 +17,14 @@
 
   programs.zsh.enable = true;
 
-  fonts =
-    (lib.mkIf pkgs.stdenv.isLinux {
-      fontDir.enable = true;
-    })
-    // {
-      packages = with pkgs; [
-        (nerdfonts.override {fonts = ["JetbrainsMono" "NerdFontsSymbolsOnly"];})
-      ];
-    };
+  fonts = (lib.mkIf pkgs.stdenv.isLinux { fontDir.enable = true; }) // {
+    packages = with pkgs; [
+      (nerdfonts.override {
+        fonts = [
+          "JetbrainsMono"
+          "NerdFontsSymbolsOnly"
+        ];
+      })
+    ];
+  };
 }

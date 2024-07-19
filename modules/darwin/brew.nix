@@ -1,11 +1,40 @@
+let
+  greedyCasks = [
+    "discord"
+    "spotify"
+    "telegram-desktop"
+    "firefox"
+    "minecraft"
+    "termius"
+    "vmware-fusion"
+    "raycast"
+  ];
+  casks = [
+    "battery"
+    "cloudflare-warp"
+    "obs"
+    "proxifier"
+    "termius"
+    "vmware-fusion"
+  ];
+in
 {
+  environment.systemPath = [ "/opt/homebrew/bin" ];
+
+  nix-homebrew = {
+    enable = true;
+
+    #todo configurable
+    user = "nartsiss";
+  };
+
   homebrew = {
     enable = true;
 
     onActivation = {
       upgrade = true;
       autoUpdate = true;
-      cleanup = "zap";
+      cleanup = "none";
     };
 
     global = {
@@ -14,23 +43,11 @@
       lockfiles = true;
     };
 
-    brews = [];
-
-    casks = [
-      "battery"
-      "cloudflare-warp"
-      "discord"
-      "docker"
-      "google-chrome"
-      "jetbrains-toolbox"
-      "minecraft"
-      "obs"
-      "proxifier"
-      "raycast"
-      "spotify"
-      "telegram-desktop"
-      "termius"
-      "vmware-fusion"
-    ];
+    casks =
+      map (name: {
+        name = name;
+        greedy = true;
+      }) greedyCasks
+      ++ casks;
   };
 }
