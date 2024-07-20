@@ -9,10 +9,8 @@
       enable = true;
 
       plugins = [
-        "git"
         "sudo"
         "macos"
-        "brew"
       ];
     };
 
