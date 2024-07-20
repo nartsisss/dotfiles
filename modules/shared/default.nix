@@ -1,6 +1,9 @@
 { lib, pkgs, ... }:
 {
-  imports = [ ./users ];
+  imports = [
+    ./users
+    ./env.nix
+  ];
 
   nix = {
     gc.automatic = true;
