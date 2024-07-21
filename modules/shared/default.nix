@@ -17,7 +17,8 @@
 
   programs.zsh.enable = true;
 
-  fonts = (lib.mkIf pkgs.stdenv.isLinux { fontDir.enable = true; }) // {
+  fonts = {
+    fontDir.enable = lib.mkIf pkgs.stdenv.isLinux true;
     packages = with pkgs; [
       (nerdfonts.override {
         fonts = [
