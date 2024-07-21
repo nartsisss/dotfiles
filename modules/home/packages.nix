@@ -9,6 +9,7 @@
     onefetch
     silicon
     asciinema
+    dust
 
     #net
     shadowsocks-rust
