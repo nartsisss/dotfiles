@@ -21,7 +21,7 @@
     packages = with pkgs; [
       (nerdfonts.override {
         fonts = [
-          "JetbrainsMono"
+          "JetBrainsMono"
           "NerdFontsSymbolsOnly"
         ];
       })
