@@ -13,10 +13,6 @@
         "macos"
       ];
     };
-
-    sessionVariables = {
-      EDITOR = "hx";
-    };
   };
 
   home.file.".hushlogin".text = "";
