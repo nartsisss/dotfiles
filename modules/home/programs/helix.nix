@@ -24,6 +24,8 @@
 
       bash-language-server
 
+      ruff
+
       #debugger
       lldb_18
     ];
@@ -39,6 +41,13 @@
     };
 
     languages = {
+      language-server = {
+        ruff = {
+          command = "ruff";
+          args = [ "server" ];
+        };
+      };
+
       language = [
         {
           name = "nix";
@@ -55,6 +64,13 @@
           name = "rust";
 
           formatter.command = "rustfmt";
+          auto-format = true;
+        }
+        {
+          name = "python";
+
+          language-servers = [ "ruff" ];
+
           auto-format = true;
         }
         {
