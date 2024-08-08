@@ -14,9 +14,6 @@
     #net
     shadowsocks-rust
 
-    #gui
-    spacedrive
-
     #lsp for helix and vscode
     nil
   ];
