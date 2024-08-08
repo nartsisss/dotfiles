@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  rust = pkgs.rust-bin.stable.latest;
+in
 {
   programs.helix = {
     enable = true;
@@ -9,13 +12,13 @@
       #formatter
       nixfmt-rfc-style
       yamlfmt
-      rust-bin.stable.latest.rustfmt
+      rust.rustfmt
 
       #lsp
       dockerfile-language-server-nodejs
       docker-compose-language-service
 
-      rust-bin.stable.latest.rust-analyzer
+      rust.rust-analyzer
 
       taplo
       yaml-language-server
