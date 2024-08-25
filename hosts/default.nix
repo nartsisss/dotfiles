@@ -1,6 +1,7 @@
 {
   self,
   nixpkgs,
+  nixpkgs-stable,
   nix-darwin,
   nix-homebrew,
   home-manager,
@@ -16,10 +17,21 @@ let
       homeManagerModules ? [ ],
     }:
     let
+      overlays = {
+        rust = rust-overlay.overlays.default;
+        stable =
+          final: prev:
+          let
+            stablePkgs = nixpkgs-stable;
+          in
+          {
+            stable = stablePkgs.legacyPackages.${system};
+          };
+      };
       #todo: make function reusable in other systems, move into lib
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ rust-overlay.overlays.default ];
+        overlays = builtins.attrValues overlays;
         config.allowUnfree = true;
       };
       specialArgs = inputs // {
@@ -32,7 +44,6 @@ let
       modules = [
         home-manager.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
-        self.darwinModules.default
         {
           home-manager = {
             extraSpecialArgs = specialArgs;
