@@ -42,6 +42,7 @@ let
       inherit pkgs;
       specialArgs = specialArgs;
       modules = [
+        self.darwinModules.default
         home-manager.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
         {
