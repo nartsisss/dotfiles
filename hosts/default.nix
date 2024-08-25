@@ -2,6 +2,7 @@
   self,
   nixpkgs,
   nixpkgs-stable,
+  lix,
   nix-darwin,
   nix-homebrew,
   home-manager,
@@ -18,6 +19,7 @@ let
     }:
     let
       overlays = {
+        lix = lix.overlays.default;
         rust = rust-overlay.overlays.default;
         stable =
           final: prev:
@@ -42,6 +44,7 @@ let
       inherit pkgs;
       specialArgs = specialArgs;
       modules = [
+        lix.nixosModules.default
         self.darwinModules.default
         home-manager.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
