@@ -18,22 +18,17 @@ let
       homeManagerModules ? [ ],
     }:
     let
-      overlays = {
-        lix = lix.overlays.default;
-        rust = rust-overlay.overlays.default;
-        stable =
-          final: prev:
-          let
-            stablePkgs = nixpkgs-stable;
-          in
-          {
-            stable = stablePkgs.legacyPackages.${system};
-          };
+      stablePkgs = final: prev: {
+        stable = nixpkgs-stable.legacyPackages.${system};
       };
       #todo: make function reusable in other systems, move into lib
       pkgs = import nixpkgs {
         inherit system;
-        overlays = builtins.attrValues overlays;
+        overlays = [
+          lix.overlays.default
+          rust-overlay.overlays.default
+          stablePkgs
+        ];
         config.allowUnfree = true;
       };
       specialArgs = inputs // {
