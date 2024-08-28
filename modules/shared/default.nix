@@ -1,9 +1,16 @@
-{ lib, pkgs, ... }:
+{
+  self,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [ ./users ];
 
   nix = {
     gc.automatic = true;
+
+    registry.nixpkgs.flake = self.inputs.nixpkgs;
 
     extraOptions = ''
       experimental-features = nix-command flakes
