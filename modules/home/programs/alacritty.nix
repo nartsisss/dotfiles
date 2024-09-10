@@ -11,8 +11,6 @@
 
         decorations = "Buttonless";
 
-        opacity = 0.8;
-
         blur = true;
       };
 
