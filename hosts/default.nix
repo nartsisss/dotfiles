@@ -7,10 +7,14 @@
   nix-homebrew,
   home-manager,
   rust-overlay,
+  nix-catppuccin,
   ...
 }@inputs:
 let
-  sharedHomeManagerModules = [ self.homeManagerModules.default ];
+  sharedHomeManagerModules = [
+    self.homeManagerModules.default
+    nix-catppuccin.homeManagerModules.catppuccin
+  ];
   darwinSystem =
     {
       system,

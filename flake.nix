@@ -24,6 +24,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
