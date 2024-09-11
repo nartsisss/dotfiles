@@ -1,3 +1,4 @@
+{ lib, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -10,7 +11,7 @@
 
       plugins = [
         "sudo"
-        "macos"
+        (lib.mkIf pkgs.stdenv.isDarwin "macos")
       ];
     };
   };
