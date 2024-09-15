@@ -10,6 +10,7 @@
     onefetch
     asciinema
     dust
+    hexyl
 
     #net
     shadowsocks-rust
