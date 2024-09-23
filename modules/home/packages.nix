@@ -11,6 +11,7 @@
     asciinema
     dust
     hexyl
+    pastel
 
     #net
     shadowsocks-rust
