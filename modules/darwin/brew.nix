@@ -1,19 +1,17 @@
 let
   greedyCasks = [
-    "discord"
-    "spotify"
-    "telegram-desktop"
-    "firefox"
-    "minecraft"
-    "termius"
-    "vmware-fusion"
-    "raycast"
+    "proxifier"
   ];
   casks = [
+    "telegram-desktop"
+    "discord"
+    "spotify"
+    "firefox"
+    "raycast"
+    "minecraft"
     "battery"
     "cloudflare-warp"
     "obs"
-    "proxifier"
     "termius"
     "vmware-fusion"
   ];
