@@ -6,7 +6,6 @@
   nix-darwin,
   nix-homebrew,
   home-manager,
-  rust-overlay,
   nix-catppuccin,
   ...
 }@inputs:
@@ -30,7 +29,6 @@ let
         inherit system;
         overlays = [
           lix.overlays.default
-          rust-overlay.overlays.default
           stablePkgs
         ];
         config.allowUnfree = true;
