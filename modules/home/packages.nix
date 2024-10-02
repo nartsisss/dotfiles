@@ -6,7 +6,7 @@
     procs
     sd
     bandwhich
-    stable.silicon
+    silicon
     onefetch
     asciinema
     dust
