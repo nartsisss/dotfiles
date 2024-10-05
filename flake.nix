@@ -20,6 +20,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:yaxitech/ragenix";
     nix-catppuccin.url = "github:catppuccin/nix";
   };
 

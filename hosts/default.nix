@@ -6,6 +6,7 @@
   nix-darwin,
   nix-homebrew,
   home-manager,
+  agenix,
   nix-catppuccin,
   ...
 }@inputs:
@@ -30,6 +31,7 @@ let
         overlays = [
           lix.overlays.default
           stablePkgs
+          agenix.overlays.default
         ];
         config.allowUnfree = true;
       };
@@ -45,6 +47,7 @@ let
         self.darwinModules.default
         home-manager.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
+        agenix.darwinModules.default
         {
           home-manager = {
             extraSpecialArgs = specialArgs;

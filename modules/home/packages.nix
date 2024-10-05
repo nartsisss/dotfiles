@@ -13,6 +13,9 @@
     hexyl
     pastel
 
+    #secrets
+    agenix
+
     #net
     shadowsocks-rust
 
