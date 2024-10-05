@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #utils
+    #cli
     hyperfine
     procs
     sd
@@ -18,8 +18,5 @@
 
     #net
     shadowsocks-rust
-
-    #lsp for helix and vscode
-    nil
   ];
 }

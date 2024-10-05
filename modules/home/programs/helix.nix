@@ -17,6 +17,8 @@
 
       rust-analyzer
 
+      nil
+
       taplo
       yaml-language-server
       markdown-oxide
