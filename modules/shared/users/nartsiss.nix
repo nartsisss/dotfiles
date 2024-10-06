@@ -1,4 +1,4 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, ... }:
 let
   username = "nartsiss";
   home = if pkgs.stdenv.isDarwin then "/Users" else "/home";
