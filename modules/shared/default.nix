@@ -14,6 +14,11 @@
     '';
 
     settings = {
+      trusted-users = [
+        "@admin"
+        "nartsiss"
+      ];
+
       trusted-substituters = [
         "https://cache.nixos.org"
         "https://cache.lix.systems"
