@@ -20,7 +20,6 @@
     bat.enable = true;
     ripgrep.enable = true;
     gitui.enable = true;
-    vscode.enable = true;
     nix-index.enable = true;
   };
 }
