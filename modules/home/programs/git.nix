@@ -1,13 +1,9 @@
-{ config, ... }:
 {
   programs = {
     git = {
       enable = true;
 
       delta.enable = true;
-
-      userName = "nartsisss";
-      userEmail = "nartsiss@proton.me";
 
       ignores = [ ".DS_Store" ];
 
@@ -19,7 +15,6 @@
 
       signing = {
         signByDefault = true;
-        key = "${config.home.homeDirectory}/.ssh/git_ed25519.pub";
       };
     };
 
