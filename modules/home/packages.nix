@@ -12,6 +12,7 @@
     dust
     hexyl
     pastel
+    ouch
 
     #secrets
     agenix
