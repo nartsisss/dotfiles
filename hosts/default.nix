@@ -2,7 +2,6 @@
   self,
   nixpkgs,
   nixpkgs-stable,
-  lix,
   nix-darwin,
   nix-homebrew,
   home-manager,
@@ -29,7 +28,6 @@ let
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          lix.overlays.default
           stablePkgs
           agenix.overlays.default
         ];
@@ -43,7 +41,6 @@ let
       inherit pkgs;
       specialArgs = specialArgs;
       modules = [
-        lix.nixosModules.default
         self.darwinModules.default
         home-manager.darwinModules.default
         nix-homebrew.darwinModules.nix-homebrew
