@@ -5,13 +5,15 @@
   nix-darwin,
   nix-homebrew,
   home-manager,
-  agenix,
+  nix-index-db,
   nix-catppuccin,
+  agenix,
   ...
 }@inputs:
 let
   sharedHomeManagerModules = [
     self.homeManagerModules.default
+    nix-index-db.hmModules.nix-index
     nix-catppuccin.homeManagerModules.catppuccin
   ];
   darwinSystem =
