@@ -19,5 +19,6 @@
 
     #net
     shadowsocks-rust
+    spoofdpi
   ];
 }
