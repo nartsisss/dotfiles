@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   programs = {
     git = {
@@ -10,7 +11,10 @@
       extraConfig = {
         init.defaultBranch = "main";
 
-        gpg.format = "ssh";
+        gpg = {
+          format = "ssh";
+          ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
+        };
       };
 
       signing = {

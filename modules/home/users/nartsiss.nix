@@ -1,12 +1,19 @@
 { config, ... }:
+let
+  user = "nartsisss";
+  email = "nartsiss+git@proton.me";
+  sshDir = "${config.home.homeDirectory}/.ssh";
+in
 {
+  home.file.".ssh/allowed_signers".text = "${email} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDebH/0Iba+BpJIQvp40o+zEciq4q/0leIh4XFO2K7fs";
+
   programs = {
     git = {
-      userName = "nartsisss";
-      userEmail = "nartsiss+git@proton.me";
+      userName = user;
+      userEmail = email;
 
       signing = {
-        key = "${config.home.homeDirectory}/.ssh/git_ed25519";
+        key = "${sshDir}/git_ed25519";
       };
     };
 
