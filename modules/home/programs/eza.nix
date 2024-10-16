@@ -4,7 +4,7 @@
     enableZshIntegration = true;
 
     git = true;
-    icons = true;
+    icons = "auto";
 
     extraOptions = [
       "--color=always"
