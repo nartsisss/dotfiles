@@ -20,5 +20,7 @@
     #net
     shadowsocks-rust
     spoofdpi
+
+    google-chrome
   ];
 }
