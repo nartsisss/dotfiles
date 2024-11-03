@@ -6,7 +6,6 @@ let
     "telegram-desktop"
     "discord"
     "spotify"
-    "firefox"
     "raycast"
     "minecraft"
     "battery"
