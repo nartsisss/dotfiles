@@ -5,6 +5,7 @@
     #pkgs
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+
     #darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
