@@ -28,6 +28,8 @@
 
       ruff
 
+      jdt-language-server
+
       #debugger
       lldb_18
     ];
