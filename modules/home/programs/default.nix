@@ -21,5 +21,6 @@
     ripgrep.enable = true;
     gitui.enable = true;
     nix-index.enable = true;
+    gradle.enable = true;
   };
 }
