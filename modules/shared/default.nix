@@ -46,12 +46,8 @@
   fonts = {
     fontDir.enable = lib.mkIf pkgs.stdenv.isLinux true;
     packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "NerdFontsSymbolsOnly"
-        ];
-      })
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
     ];
   };
 }
