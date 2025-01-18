@@ -9,6 +9,8 @@
   nix = {
     gc.automatic = true;
 
+    channel.enable = false;
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

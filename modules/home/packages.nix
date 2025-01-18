@@ -17,10 +17,11 @@
     #secrets
     agenix
 
-    #net
-    shadowsocks-rust
-    spoofdpi
-
+    #desktop
     google-chrome
+    telegram-desktop
+
+    #todo only for darwin
+    raycast
   ];
 }
